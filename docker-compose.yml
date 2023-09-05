@@ -1,0 +1,13 @@
+services:
+  mongo-container:
+    image: mongo
+    restart: always
+    container_name: donas
+    environment:
+        # provide your credentials here
+        - MONGO_INITDB_ROOT_USERNAME=root
+        - MONGO_INITDB_ROOT_PASSWORD=Master123!
+    ports:
+      - "27017:27017"
+    # no --auth is needed here as presence of username and password add this option automatically
+    command: mongod
