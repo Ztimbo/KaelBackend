@@ -79,7 +79,7 @@ const deleteUser = async (req, res) => {
 
 const getUsers = async (req, res) => {
     try {
-        const users = await User.find().select('-password -__v').where('isActive').equals(true);
+        const users = await User.find().select('-password -__v -isActive').where('isActive').equals(true);
         res.json(users);
     } catch(err) {
         res.status(GENERAL_ERROR.code).json({message: GENERAL_ERROR.message});
