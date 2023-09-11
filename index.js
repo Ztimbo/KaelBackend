@@ -8,6 +8,7 @@ import conn from "./config/db.js";
 
 //Routes
 import userRouter from "./routes/userRoutes.js";
+import productRouter from "./routes/productRoutes.js";
 
 const app = express();
 app.use(express.json());
@@ -29,6 +30,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use('/api/users', userRouter);
+app.use('/api/products', productRouter);
 
 const PORT = process.env.PORT || 4000;
 
