@@ -50,6 +50,10 @@ const errorMessage = {
     PRODUCT_DELETED: {
         code: 200,
         message: 'Producto eliminado'
+    },
+    ORDER_CREATED: {
+        code: 201,
+        message: 'Orden creada'
     }
 }
 

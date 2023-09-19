@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 import { errorMessage } from "../helpers/catalogs.js";
 
-const { INVALID_TOKEN } = errorMessage;
+const { INVALID_TOKEN, GENERAL_ERROR } = errorMessage;
 
 const checkAuth = async (req, res, next) => {
     let token;
