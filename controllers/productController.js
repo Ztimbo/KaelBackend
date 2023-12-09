@@ -39,7 +39,7 @@ const updateProduct = async (req, res) => {
 
     const {product, price} = req.body;
 
-    const productExists = await Product.findOne({product});
+    const productExists = await Product.findOne({product}).where('_id').ne(id);
 
     if(productExists) {
         return res.status(PRODUCT_NAME_ALREADY_CREATED.code).json({message: PRODUCT_NAME_ALREADY_CREATED.message});
@@ -52,7 +52,6 @@ const updateProduct = async (req, res) => {
         await savedProduct.save();
         res.status(PRODUCT_UPDATED.code).json({message: PRODUCT_UPDATED.message});
     } catch(ex) {
-        console.log(ex.message);
         res.status(GENERAL_ERROR.code).json({message: GENERAL_ERROR.message});
     }
 }
