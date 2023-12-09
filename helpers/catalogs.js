@@ -54,7 +54,15 @@ const errorMessage = {
     ORDER_CREATED: {
         code: 201,
         message: 'Orden creada'
-    }
+    },
+    ORDER_NOT_FOUND: {
+        code: 404,
+        message: 'Orden no encontrada'
+    },
+    ORDER_UPDATED: {
+        code: 200,
+        message: 'Orden actualizada'
+    },
 }
 
 export {errorMessage}
